@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction</title>
+  <style>
+    /* Import Google Font */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    /* Body styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      margin: 0;
+      padding-top: 80px;
+    }
+
+    /* Form container */
+    form {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 40px 45px;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      width: 380px;
+      text-align: left;
+      transition: all 0.3s ease-in-out;
+    }
+
+    form:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Title */
+    h1 {
+      text-align: center;
+      color: #ff6600;
+      font-size: 26px;
+      margin-bottom: 30px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Label */
+    label {
+      display: block;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    /* Input fields */
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      outline: none;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    input:focus {
+      border-color: #ff6600;
+      box-shadow: 0 0 8px rgba(255, 102, 0, 0.4);
+    }
+
+    /* Submit button */
+    button {
+      width: 100%;
+      margin-top: 30px;
+      padding: 12px;
+      background: linear-gradient(90deg, #ff9966, #ff5e62);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #ff5e62, #ff9966);
+      transform: scale(1.03);
+      box-shadow: 0 6px 15px rgba(255, 94, 98, 0.4);
+    }
+
+    /* Responsive design */
+    @media (max-width: 450px) {
+      form {
+        width: 90%;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form action="/predict" method="post">
+    <h1>Predict Birth Weight Of Your Child</h1>
+
+    <label>Gestation</label>
+    <input type="number" name="gestation" placeholder="Enter gestation period">
+
+    <label>Parity</label>
+    <input type="number" name="parity" placeholder="Enter parity value">
+
+    <label>Age</label>
+    <input type="number" name="age" placeholder="Enter mother’s age">
+
+    <label>Height</label>
+    <input type="number" name="height" placeholder="Enter height in cm">
+
+    <label>Weight</label>
+    <input type="number" name="weight" placeholder="Enter weight in kg">
+
+    <label>Smoke</label>
+    <input type="number" name="smoke" placeholder="Enter smoking value (0 or 1)">
+
+    <button type="submit">Predict</button>
+  </form>
+</body>
+</html>
